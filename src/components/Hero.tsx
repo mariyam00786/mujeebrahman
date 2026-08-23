@@ -1,100 +1,110 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { content } from "@/data/content";
 
 export default function Hero() {
-  const { topTextLeft, topTextRight, mainText, paragraphLeft, paragraphRight, image } = content.hero;
-
   return (
-    <section className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-background pt-6 md:pt-12">
+    <section className="relative min-h-[100dvh] flex flex-col justify-center items-center overflow-hidden bg-background">
       
-      {/* Top Floating Text (Normal flow) */}
-      <div className="w-full px-6 md:px-12 z-30">
-        <div className="flex justify-between w-full max-w-7xl mx-auto">
-          <motion.h2 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-2xl md:text-4xl font-bold lowercase tracking-tight"
-          >
-            {topTextLeft}
-          </motion.h2>
-          <motion.h2 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl md:text-4xl font-bold lowercase tracking-tight"
-          >
-            {topTextRight}
-          </motion.h2>
-        </div>
-      </div>
-
-      {/* Center 3D Interwoven Effect (Wrapper ensures items stay together) */}
-      <div className="relative flex-1 flex flex-col items-center justify-end w-full pointer-events-none mt-10 md:mt-0">
-        
-        {/* Layer 1: Solid Background Text */}
-        <motion.h1 
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute top-[40%] md:top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-[26vw] md:text-[15vw] lg:text-[14vw] font-black text-accent leading-none select-none z-0 tracking-tighter uppercase font-sans whitespace-nowrap w-full text-center"
-        >
-          {mainText}
-        </motion.h1>
-
-        {/* Layer 2: Person Image */}
+      {/* Top Bar Navigation */}
+      <div className="absolute top-0 left-0 right-0 p-6 md:p-8 flex justify-between items-center z-50 text-sm md:text-base font-medium">
         <motion.div 
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 w-full max-w-[650px] lg:max-w-[800px] h-[50vh] md:h-[65vh] lg:h-[75vh] pointer-events-auto"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-accent text-primary px-5 py-2 rounded-full font-bold shadow-sm"
         >
-          <Image
-            src={image}
-            alt="Mujeeb Rahman - Graphic Designer"
-            fill
-            className="object-contain object-bottom"
-            priority
-          />
+          Hello, Welcome
         </motion.div>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-primary hidden sm:block font-semibold"
+        >
+          Mujeeb Rahman
+        </motion.div>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-primary font-semibold"
+        >
+          Graphic Design
+        </motion.div>
+      </div>
 
-        {/* Layer 3: Transparent Outline Text (Over Image) */}
+      {/* Center Kinetic Typography */}
+      <div className="relative flex flex-col items-center justify-center w-full z-10 pointer-events-none mt-10 md:mt-0">
+        
+        {/* Top Layer 2 (Hollow Outline) */}
+        <motion.h1 
+          initial={{ y: 0, opacity: 0 }}
+          animate={{ y: "-65%", opacity: 0.3 }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute text-[22vw] sm:text-[18vw] md:text-[16vw] font-black tracking-tighter text-transparent lowercase whitespace-nowrap"
+          style={{ WebkitTextStroke: '2px var(--color-accent)' }}
+        >
+          portfolio
+        </motion.h1>
+
+        {/* Top Layer 1 (Hollow Outline) */}
+        <motion.h1 
+          initial={{ y: 0, opacity: 0 }}
+          animate={{ y: "-35%", opacity: 0.6 }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute text-[22vw] sm:text-[18vw] md:text-[16vw] font-black tracking-tighter text-transparent lowercase whitespace-nowrap"
+          style={{ WebkitTextStroke: '2px var(--color-accent)' }}
+        >
+          portfolio
+        </motion.h1>
+
+        {/* Center Solid Layer (Yellow with Dark Brutalist Shadow) */}
         <motion.h1 
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute top-[40%] md:top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-[26vw] md:text-[15vw] lg:text-[14vw] font-black leading-none select-none z-20 pointer-events-none text-transparent tracking-tighter uppercase font-sans whitespace-nowrap w-full text-center"
-          style={{ WebkitTextStroke: '1.5px rgba(255, 232, 98, 0.9)' }}
+          transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="relative text-[22vw] sm:text-[18vw] md:text-[16vw] font-black tracking-tighter text-accent lowercase whitespace-nowrap z-20"
+          style={{ textShadow: '4px 4px 0px var(--color-primary), 8px 8px 0px rgba(28,25,23,0.15)' }}
         >
-          {mainText}
+          portfolio
         </motion.h1>
+
+        {/* Bottom Layer 1 (Hollow Outline) */}
+        <motion.h1 
+          initial={{ y: 0, opacity: 0 }}
+          animate={{ y: "35%", opacity: 0.6 }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute text-[22vw] sm:text-[18vw] md:text-[16vw] font-black tracking-tighter text-transparent lowercase whitespace-nowrap"
+          style={{ WebkitTextStroke: '2px var(--color-accent)' }}
+        >
+          portfolio
+        </motion.h1>
+
+        {/* Bottom Layer 2 (Hollow Outline) */}
+        <motion.h1 
+          initial={{ y: 0, opacity: 0 }}
+          animate={{ y: "65%", opacity: 0.3 }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute text-[22vw] sm:text-[18vw] md:text-[16vw] font-black tracking-tighter text-transparent lowercase whitespace-nowrap"
+          style={{ WebkitTextStroke: '2px var(--color-accent)' }}
+        >
+          portfolio
+        </motion.h1>
+
+        {/* 2026 Badge */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="absolute top-[75%] md:top-[80%] z-30 text-xl md:text-3xl font-black text-primary/80 bg-background/80 backdrop-blur-sm px-4 rounded-full drop-shadow-md"
+        >
+          2026
+        </motion.div>
       </div>
 
-      {/* Bottom Floating Paragraphs (Relative on mobile, absolute overlap on desktop) */}
-      <div className="relative md:absolute bottom-0 md:bottom-12 left-0 right-0 px-6 md:px-12 z-30 pb-10 md:pb-0 mt-6 md:mt-0 pointer-events-none">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full max-w-7xl mx-auto gap-6 md:gap-0 pointer-events-auto">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="max-w-full md:max-w-sm"
-          >
-            <p className="text-sm md:text-base text-neutral-800 leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: paragraphLeft.replace('I am', '<span class="font-bold text-black text-base">I am</span>') }} />
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="max-w-full md:max-w-sm text-left md:text-right self-start md:self-end"
-          >
-            <p className="text-sm md:text-base text-neutral-800 leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: paragraphRight.replace('B.Com Computer Applications', '<span class="font-bold text-black text-base">B.Com Computer Applications</span>') }} />
-          </motion.div>
-        </div>
-      </div>
     </section>
   );
 }
