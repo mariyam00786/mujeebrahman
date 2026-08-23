@@ -5,7 +5,7 @@ export const content = {
     mainText: "DESIGNER",
     paragraphLeft: "I am a dedicated Graphic Designer specializing in logo design, branding, posters, brochures, and social media creatives. I have a strong passion for visual storytelling.",
     paragraphRight: "With a background in B.Com Computer Applications, I am always learning, experimenting, and pushing my creative boundaries to deliver designs that make an impact.",
-    image: "/images/hero-portrait.png" // User needs to provide this cutout
+    image: "/images/work/hero-portrait.png" // User needs to provide this cutout
   },
   marquee: {
     items: [
