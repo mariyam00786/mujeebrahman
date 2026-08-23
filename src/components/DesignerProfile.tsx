@@ -71,7 +71,7 @@ export default function DesignerProfile() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className="absolute top-[40%] md:top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-[18vw] sm:text-[15vw] md:text-[14vw] font-black leading-none select-none z-20 pointer-events-none text-transparent tracking-tighter uppercase font-sans whitespace-nowrap w-full text-center"
-          style={{ WebkitTextStroke: '1.5px rgba(255, 232, 98, 0.9)' }}
+          style={{ WebkitTextStroke: '1px rgba(255, 232, 98, 0.35)' }}
         >
           {mainText}
         </motion.h1>
