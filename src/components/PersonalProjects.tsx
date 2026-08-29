@@ -20,6 +20,7 @@ const images = [
   "/images/work/personal works (9).jpeg",
   "/images/work/personal works (10).jpeg",
   "/images/work/personal works (11).jpeg",
+  "/images/work/personal works (12).jpeg",
 ];
 
 function CardIcons() {
@@ -82,24 +83,63 @@ export default function PersonalProjects() {
           </motion.p>
         </div>
 
-        {/* Square card grid - 3 columns */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 mb-12 md:mb-16">
+        {/* Masonry Gallery - Perfect Masonry via Flex Columns */}
+        {/* Desktop: 3 Columns */}
+        <div className="hidden lg:grid grid-cols-3 gap-6 mb-16">
+          {[0, 1, 2].map((colIndex) => (
+            <div key={colIndex} className="flex flex-col gap-6">
+              {allItems.filter((_, i) => i % 3 === colIndex).map((img, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="relative overflow-hidden rounded-2xl group bg-primary/5 shadow-sm hover:shadow-md transition-all duration-500">
+                    <img src={encodeURI(img)} alt={`Personal Work`} className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" />
+                  </div>
+                  <CardIcons />
+                </motion.div>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Tablet: 2 Columns */}
+        <div className="hidden md:grid lg:hidden grid-cols-2 gap-4 mb-12">
+          {[0, 1].map((colIndex) => (
+            <div key={colIndex} className="flex flex-col gap-4">
+              {allItems.filter((_, i) => i % 2 === colIndex).map((img, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="relative overflow-hidden rounded-2xl group bg-primary/5 shadow-sm hover:shadow-md transition-all duration-500">
+                    <img src={encodeURI(img)} alt={`Personal Work`} className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" />
+                  </div>
+                  <CardIcons />
+                </motion.div>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile: 1 Column */}
+        <div className="grid md:hidden grid-cols-1 gap-4 mb-12">
           {allItems.map((img, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: (idx % 3) * 0.07 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6 }}
             >
-              {/* Poster image card */}
-              <div className="relative overflow-hidden rounded-2xl group aspect-[3/4] bg-primary/5 shadow-sm hover:shadow-lg transition-shadow duration-500">
-                <img
-                  src={img}
-                  alt={`Personal Work ${idx + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                  loading="lazy"
-                />
+              <div className="relative overflow-hidden rounded-2xl group bg-primary/5 shadow-sm hover:shadow-md transition-all duration-500">
+                <img src={encodeURI(img)} alt={`Personal Work`} className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" />
               </div>
               <CardIcons />
             </motion.div>
@@ -125,7 +165,7 @@ export default function PersonalProjects() {
             >
               <div className="relative overflow-hidden rounded-2xl group aspect-[9/16] bg-primary/5 shadow-sm hover:shadow-lg transition-shadow duration-500">
                 <video
-                  src={src}
+                  src={encodeURI(src)}
                   autoPlay
                   loop
                   muted

@@ -4,6 +4,7 @@ import MarqueeStrip from "@/components/MarqueeStrip";
 import Capabilities from "@/components/Capabilities";
 import CuratedProjects from "@/components/CuratedProjects";
 import PersonalProjects from "@/components/PersonalProjects";
+import BrandingProjects from "@/components/BrandingProjects";
 
 import ContactFooter from "@/components/ContactFooter";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Capabilities />
       <CuratedProjects />
       <PersonalProjects />
+      <BrandingProjects />
 
       <ContactFooter />
     </main>

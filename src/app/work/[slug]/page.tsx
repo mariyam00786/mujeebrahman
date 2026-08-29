@@ -26,7 +26,6 @@ const projectDetails: Record<string, any> = {
           "/images/work/ispeak-branding (8).jpeg",
           "/images/work/ispeak-branding (9).jpeg",
           "/images/work/ispeak-branding (10).jpeg",
-          "/images/work/ispeak-branding (11).jpeg",
         ]
       },
       {
@@ -41,8 +40,8 @@ const projectDetails: Record<string, any> = {
           "/images/work/ispeak-poster (7).jpeg",
           "/images/work/ispeak-poster (8).jpeg",
           "/images/work/ispeak-poster (9).jpeg",
-          "/images/work/ispeak-poster (10).jpeg",
           "/images/work/ispeak-poster (11).jpeg",
+          "/images/work/ispeak-poster(12).jpeg",
         ]
       }
     ]
@@ -80,6 +79,8 @@ const projectDetails: Record<string, any> = {
       "/images/work/flywing-posters (8).jpeg",
       "/images/work/flywing-posters (9).jpeg",
       "/images/work/flywing-posters (10).jpeg",
+      "/images/work/flywing-posters (11).jpeg",
+      "/images/work/flywing-posters (12).jpeg",
     ]
   },
   "personal": {
@@ -103,17 +104,17 @@ const projectDetails: Record<string, any> = {
           "/images/work/personal works (9).jpeg",
           "/images/work/personal works (10).jpeg",
           "/images/work/personal works (11).jpeg",
-          "/images/work/personal works (99) - Copy.jpeg",
         ]
       },
       {
         label: "Logo Design",
         images: [
-          "/images/work/personal-logo.jpeg",
           "/images/work/personal-logo (1).jpeg",
           "/images/work/personal-logo (2).jpeg",
           "/images/work/personal-logo (3).jpeg",
           "/images/work/personal-logo (4).jpeg",
+          "/images/work/personal-logo (5).jpeg",
+          "/images/work/personal-logo (6).jpeg",
         ]
       }
     ]
@@ -130,7 +131,7 @@ function MasonryGrid({ images, projectName }: { images: string[]; projectName: s
           className="relative overflow-hidden bg-primary/5 group rounded-2xl md:rounded-3xl break-inside-avoid shadow-sm hover:shadow-xl transition-shadow duration-500"
         >
           <img
-            src={img}
+            src={encodeURI(img)}
             alt={`${projectName} image ${idx + 1}`}
             className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
             loading="lazy"
@@ -197,7 +198,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <div className="mb-16 md:mb-24 w-full flex justify-center">
             <div className="w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl bg-primary/5 flex items-center justify-center">
               <img 
-                src={project.highlightImage} 
+                src={encodeURI(project.highlightImage)} 
                 alt={`${project.name} Highlight`}
                 className="w-full h-auto max-h-[80vh] object-contain"
               />
