@@ -42,17 +42,6 @@ const ispeakImages: ProjectImage[] = [
   { src: "/images/work/ispeak-branding (8).jpeg" },
   { src: "/images/work/ispeak-branding (9).jpeg" },
   { src: "/images/work/ispeak-branding (10).jpeg" },
-  { src: "/images/work/ispeak-poster (1).jpeg" },
-  { src: "/images/work/ispeak-poster (2).jpeg" },
-  { src: "/images/work/ispeak-poster (3).jpeg" },
-  { src: "/images/work/ispeak-poster (4).jpeg" },
-  { src: "/images/work/ispeak-poster (5).jpeg" },
-  { src: "/images/work/ispeak-poster (6).jpeg" },
-  { src: "/images/work/ispeak-poster (7).jpeg" },
-  { src: "/images/work/ispeak-poster (8).jpeg" },
-  { src: "/images/work/ispeak-poster (9).jpeg" },
-  { src: "/images/work/ispeak-poster (11).jpeg" },
-  { src: "/images/work/ispeak-poster(12).jpeg" },
 ];
 
 const projects: BrandingProject[] = [
