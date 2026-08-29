@@ -31,16 +31,16 @@ export default function Hero() {
       </motion.div>
 
       {/* Portfolio text — absolutely centered */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="relative w-full overflow-hidden leading-none">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none px-4">
+        <div className="relative w-full leading-none">
           <motion.h1
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="font-script text-primary whitespace-nowrap select-none italic w-full text-center"
+            className="font-script text-primary select-none italic w-full text-center"
             style={{
-              fontSize: "clamp(3.5rem, 18vw, 20rem)",
-              lineHeight: 0.95,
+              fontSize: "clamp(3rem, 18vw, 20rem)",
+              lineHeight: 1,
               fontWeight: 700,
             }}
           >
