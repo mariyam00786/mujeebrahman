@@ -31,17 +31,6 @@ const diafaImages: ProjectImage[] = [
   { src: "/images/work/branding (11).jpeg" },
 ];
 
-const ispeakImages: ProjectImage[] = [
-  { src: "/images/work/ispeak-branding (1).jpeg" },
-  { src: "/images/work/ispeak-branding (3).jpeg" },
-  { src: "/images/work/ispeak-branding (4).jpeg" },
-  { src: "/images/work/ispeak-branding (5).jpeg" },
-  { src: "/images/work/ispeak-branding (6).jpeg" },
-  { src: "/images/work/ispeak-branding (7).jpeg" },
-  { src: "/images/work/ispeak-branding (8).jpeg" },
-  { src: "/images/work/ispeak-branding (9).jpeg" },
-  { src: "/images/work/ispeak-branding (10).jpeg" },
-];
 
 const projects: BrandingProject[] = [
   {
@@ -52,15 +41,6 @@ const projects: BrandingProject[] = [
       "From concept development to final execution, our expertise covers every stage of the branding process. Whether it's building a brand from the ground up or refreshing an existing identity, I provide innovative solutions that connect deeply with audiences and elevate brand presence."
     ],
     images: diafaImages
-  },
-  {
-    id: "ispeak",
-    clientName: "ISPEAK CENTER",
-    description: [
-      "A comprehensive brand identity for Ispeak Center. Focusing on accessibility and engagement, the design language communicates care, professionalism, and approachability.",
-      "The visual system extends across various touchpoints, ensuring a consistent and impactful brand presence in both physical and digital spaces."
-    ],
-    images: ispeakImages
   }
 ];
 

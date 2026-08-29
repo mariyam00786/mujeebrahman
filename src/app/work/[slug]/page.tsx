@@ -56,7 +56,6 @@ const projectDetails: Record<string, any> = {
       "/images/work/promed-posters (1).jpeg",
       "/images/work/promed-posters (2).jpeg",
       "/images/work/promed-posters (3).jpeg",
-      "/images/work/promed-posters (4).jpeg",
       "/images/work/promed-posters (5).jpeg",
     ]
   },
@@ -76,7 +75,6 @@ const projectDetails: Record<string, any> = {
       "/images/work/flywing-posters (6).jpeg",
       "/images/work/flywing-posters (7).jpeg",
       "/images/work/flywing-posters (8).jpeg",
-      "/images/work/flywing-posters (9).jpeg",
       "/images/work/flywing-posters (10).jpeg",
       "/images/work/flywing-posters (11).jpeg",
       "/images/work/flywing-posters (12).jpeg",

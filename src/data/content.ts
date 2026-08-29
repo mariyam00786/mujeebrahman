@@ -31,7 +31,7 @@ export const content = {
       desc: "Event posters, brochures, flyers and magazine layouts with strong visual hierarchy."
     },
     {
-      title: "Video Editing",
+      title: "Videography & Video Editing",
       desc: "Event reels, promos & social cuts — shot, edited and colour-graded end to end."
     },
     {
@@ -133,6 +133,9 @@ export const content = {
     email: "mujeebmuji.888@gmail.com",
     phoneQatar: "+974 30482688",
     phoneIndia: "+91 81295 51217",
-    socials: {} as Record<string, string>
+    socials: {
+      linkedin: "https://www.linkedin.com/in/mujeeb-rahman-5b3941219",
+      instagram: "https://www.instagram.com/_muji_arah_man?igsi=NzU2dWpqN2NodHA4&utm_source=qr"
+    } as Record<string, string>
   }
 };
