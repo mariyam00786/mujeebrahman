@@ -87,7 +87,7 @@ export default function DesignerProfile() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="w-full md:max-w-md"
           >
-            <p className="text-sm md:text-base text-primary/90 leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: paragraphLeft.replace('I am', '<span class="font-bold text-primary text-base">I am</span>') }} />
+            <p className="text-sm md:text-base text-primary/90 leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: paragraphLeft }} />
           </motion.div>
 
           <motion.div 
@@ -97,7 +97,7 @@ export default function DesignerProfile() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="w-full md:max-w-md text-left md:text-right"
           >
-            <p className="text-sm md:text-base text-primary/90 leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: paragraphRight.replace('B.Com Computer Applications', '<span class="font-bold text-primary text-base">B.Com Computer Applications</span>') }} />
+            <p className="text-sm md:text-base text-primary/90 leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: paragraphRight }} />
           </motion.div>
         </div>
       </div>

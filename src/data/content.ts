@@ -3,8 +3,8 @@ export const content = {
     topTextLeft: "i'm",
     topTextRight: "graphic",
     mainText: "DESIGNER",
-    paragraphLeft: "I am a dedicated Graphic Designer specializing in logo design, branding, posters, brochures, and social media creatives. I have a strong passion for visual storytelling.",
-    paragraphRight: "4 years of experience in visual storytelling, content creation, and digital marketing. Proficient in Adobe Creative Suite — transforming brand identity into compelling visuals and campaigns that drive engagement and growth.",
+    paragraphLeft: "<span class=\"font-bold text-primary text-base\">I’m a Graphic Designer</span> and visual storyteller with 4 years of experience creating work that makes people stop, look, and remember.<br/><br/>From logos and brand identities to posters, social media campaigns, brochures, and video content, I love turning raw ideas into visuals with personality. I mix creativity with strategy to create designs that don’t just look good, they have something to say.",
+    paragraphRight: "With <span class=\"font-bold text-primary text-base\">Adobe Creative Suite</span> as my playground, I’m all about experimenting, building bold visual identities, and creating content that keeps brands relevant, engaging, and impossible to scroll past.",
     image: "/images/work/hero-portrait.png" // User needs to provide this cutout
   },
   marquee: {
