@@ -32,22 +32,82 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* Spacer */}
+      {/* Massive elegant "Portfolio" — vertically & horizontally centered */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="relative w-full overflow-hidden leading-none">
+
+          {/* The Portfolio text — elegant script */}
+          <motion.h1
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            className="font-script text-primary whitespace-nowrap select-none italic w-full text-center"
+            style={{
+              fontSize: "clamp(5rem, 18vw, 20rem)",
+              lineHeight: 0.95,
+              fontWeight: 700,
+            }}
+          >
+            Portfolio
+          </motion.h1>
+
+          {/* Golden wavy SVG ribbon — cuts across the text */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 1.4, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute inset-0 pointer-events-none origin-left"
+            style={{ top: "38%", height: "28%" }}
+          >
+            <svg
+              viewBox="0 0 1440 120"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-full"
+            >
+              <defs>
+                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#b8860b" stopOpacity="0.6" />
+                  <stop offset="20%" stopColor="#ffd700" stopOpacity="0.9" />
+                  <stop offset="45%" stopColor="#ffe862" stopOpacity="1" />
+                  <stop offset="60%" stopColor="#d4a017" stopOpacity="1" />
+                  <stop offset="80%" stopColor="#ffd700" stopOpacity="0.9" />
+                  <stop offset="100%" stopColor="#b8860b" stopOpacity="0.5" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M0,55 C120,20 240,90 360,50 C480,10 600,80 720,45 C840,10 960,75 1080,40 C1200,5 1320,70 1440,35"
+                fill="none"
+                stroke="url(#goldGrad)"
+                strokeWidth="18"
+                strokeLinecap="round"
+              />
+              <path
+                d="M0,50 C120,15 240,85 360,45 C480,5 600,75 720,40 C840,5 960,70 1080,35 C1200,0 1320,65 1440,30"
+                fill="none"
+                stroke="rgba(255,255,255,0.5)"
+                strokeWidth="5"
+                strokeLinecap="round"
+              />
+            </svg>
+          </motion.div>
+
+        </div>
+      </div>
+
+      {/* Spacer — pushes info strip to bottom */}
       <div className="flex-1" />
 
-      {/* Middle info strip */}
+      {/* Bottom info strip */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.9, delay: 0.4 }}
-        className="flex justify-between items-end px-6 md:px-12 pb-6 z-10"
+        className="flex justify-between items-end px-6 md:px-12 pb-8 z-10"
       >
-        {/* Left: roles */}
         <p className="font-sans text-xs md:text-sm text-secondary tracking-wide max-w-xs leading-relaxed">
           Graphic Designer&nbsp;/&nbsp;Brand Identity&nbsp;/&nbsp;Social Media
         </p>
-
-        {/* Right: contact info */}
         <div className="text-right font-mono text-xs text-secondary tracking-wide hidden md:flex gap-4 items-center">
           <span>mujeebmuji.888@gmail.com</span>
           <span className="text-primary/30">/</span>
@@ -56,70 +116,6 @@ export default function Hero() {
           <span>Kerala, India</span>
         </div>
       </motion.div>
-
-      {/* Massive elegant "Portfolio" with golden wave */}
-      <div className="relative w-full overflow-hidden leading-none">
-
-        {/* The Portfolio text — elegant script */}
-        <motion.h1
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          className="font-script text-primary whitespace-nowrap select-none italic"
-          style={{
-            fontSize: "clamp(5rem, 18vw, 20rem)",
-            lineHeight: 0.95,
-            paddingLeft: "0.05em",
-            fontWeight: 700,
-          }}
-        >
-          Portfolio
-        </motion.h1>
-
-        {/* Golden wavy SVG ribbon — cuts across the text */}
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ duration: 1.4, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute inset-0 pointer-events-none origin-left"
-          style={{ top: "38%", height: "28%" }}
-        >
-          <svg
-            viewBox="0 0 1440 120"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-full"
-          >
-            <defs>
-              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#b8860b" stopOpacity="0.6" />
-                <stop offset="20%" stopColor="#ffd700" stopOpacity="0.9" />
-                <stop offset="45%" stopColor="#ffe862" stopOpacity="1" />
-                <stop offset="60%" stopColor="#d4a017" stopOpacity="1" />
-                <stop offset="80%" stopColor="#ffd700" stopOpacity="0.9" />
-                <stop offset="100%" stopColor="#b8860b" stopOpacity="0.5" />
-              </linearGradient>
-            </defs>
-            {/* Main thick wavy ribbon */}
-            <path
-              d="M0,55 C120,20 240,90 360,50 C480,10 600,80 720,45 C840,10 960,75 1080,40 C1200,5 1320,70 1440,35"
-              fill="none"
-              stroke="url(#goldGrad)"
-              strokeWidth="18"
-              strokeLinecap="round"
-            />
-            {/* Shimmer highlight on top */}
-            <path
-              d="M0,50 C120,15 240,85 360,45 C480,5 600,75 720,40 C840,5 960,70 1080,35 C1200,0 1320,65 1440,30"
-              fill="none"
-              stroke="rgba(255,255,255,0.5)"
-              strokeWidth="5"
-              strokeLinecap="round"
-            />
-          </svg>
-        </motion.div>
-
-      </div>
 
       {/* Scroll indicator */}
       <motion.div
