@@ -86,7 +86,7 @@ export default function Hero() {
         className="flex flex-col md:flex-row justify-between items-start md:items-end px-5 md:px-12 pb-16 md:pb-8 gap-2 md:gap-0 z-10"
       >
         <p className="font-sans text-xs md:text-sm text-secondary tracking-wide leading-relaxed">
-          Graphic Designer&nbsp;/&nbsp;Brand Identity&nbsp;/&nbsp;Social Media
+          BRANDING&nbsp;&bull;&nbsp;GRAPHIC DESIGN&nbsp;&bull;&nbsp;SOCIAL MEDIA&nbsp;&bull;&nbsp;VIDEO&nbsp;&bull;&nbsp;CONTENT&nbsp;&bull;&nbsp;DIGITAL MARKETING
         </p>
         <div className="font-mono text-[10px] md:text-xs text-secondary tracking-wide flex flex-wrap gap-2 md:gap-4 items-center">
           <span>mujeebmuji.888@gmail.com</span>
