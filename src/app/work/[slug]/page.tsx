@@ -196,13 +196,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         {/* Highlight Image (if any) */}
         {project.highlightImage && (
           <div className="mb-16 md:mb-24 w-full">
-            <div className="relative w-full aspect-video md:aspect-[2/1] rounded-2xl md:rounded-3xl overflow-hidden bg-primary/5 shadow-xl">
-              <Image 
+            <div className="w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl bg-primary/5">
+              <img 
                 src={project.highlightImage} 
                 alt={`${project.name} Highlight`}
-                fill
-                className="object-cover"
-                priority
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
