@@ -16,7 +16,6 @@ const projectDetails: Record<string, any> = {
       {
         label: "Branding",
         images: [
-          "/images/work/ispeak-cover.jpg.jpg",
           "/images/work/ispeak-branding (1).jpeg",
           "/images/work/ispeak-branding (2).jpeg",
           "/images/work/ispeak-branding (3).jpeg",
