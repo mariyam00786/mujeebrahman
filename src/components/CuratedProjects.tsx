@@ -24,7 +24,7 @@ const curatedProjects = [
     slug: "flywings",
     year: "2022",
     category: "POSTERS | BANNERS | VIDEO EDITING",
-    image: "/images/work/flywing-posters (9).jpeg",
+    image: "/images/work/flywings-cover.jpg.jpeg",
   },
 ];
 

@@ -88,7 +88,7 @@ export default function PersonalProjects() {
         <div className="hidden lg:grid grid-cols-3 gap-6 mb-16">
           {[0, 1, 2].map((colIndex) => (
             <div key={colIndex} className="flex flex-col gap-6">
-              {allItems.filter((_, i) => i % 3 === colIndex).map((img, idx) => (
+              {allItems.filter((_, i) => i % 3 === colIndex).map((file, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 24 }}
@@ -97,7 +97,11 @@ export default function PersonalProjects() {
                   transition={{ duration: 0.6 }}
                 >
                   <div className="relative overflow-hidden rounded-2xl group bg-primary/5 shadow-sm hover:shadow-md transition-all duration-500">
-                    <img src={encodeURI(img)} alt={`Personal Work`} className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" />
+                    {file.endsWith(".mp4") ? (
+                      <video src={encodeURI(file)} autoPlay loop muted playsInline className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                    ) : (
+                      <img src={encodeURI(file)} alt={`Personal Work`} className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" />
+                    )}
                   </div>
                   <CardIcons />
                 </motion.div>
@@ -110,7 +114,7 @@ export default function PersonalProjects() {
         <div className="hidden md:grid lg:hidden grid-cols-2 gap-4 mb-12">
           {[0, 1].map((colIndex) => (
             <div key={colIndex} className="flex flex-col gap-4">
-              {allItems.filter((_, i) => i % 2 === colIndex).map((img, idx) => (
+              {allItems.filter((_, i) => i % 2 === colIndex).map((file, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 24 }}
@@ -119,7 +123,11 @@ export default function PersonalProjects() {
                   transition={{ duration: 0.6 }}
                 >
                   <div className="relative overflow-hidden rounded-2xl group bg-primary/5 shadow-sm hover:shadow-md transition-all duration-500">
-                    <img src={encodeURI(img)} alt={`Personal Work`} className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" />
+                    {file.endsWith(".mp4") ? (
+                      <video src={encodeURI(file)} autoPlay loop muted playsInline className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                    ) : (
+                      <img src={encodeURI(file)} alt={`Personal Work`} className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" />
+                    )}
                   </div>
                   <CardIcons />
                 </motion.div>
@@ -130,7 +138,7 @@ export default function PersonalProjects() {
 
         {/* Mobile: 1 Column */}
         <div className="grid md:hidden grid-cols-1 gap-4 mb-12">
-          {allItems.map((img, idx) => (
+          {allItems.map((file, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 24 }}
@@ -139,7 +147,11 @@ export default function PersonalProjects() {
               transition={{ duration: 0.6 }}
             >
               <div className="relative overflow-hidden rounded-2xl group bg-primary/5 shadow-sm hover:shadow-md transition-all duration-500">
-                <img src={encodeURI(img)} alt={`Personal Work`} className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" />
+                {file.endsWith(".mp4") ? (
+                  <video src={encodeURI(file)} autoPlay loop muted playsInline className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                ) : (
+                  <img src={encodeURI(file)} alt={`Personal Work`} className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" />
+                )}
               </div>
               <CardIcons />
             </motion.div>
@@ -173,6 +185,7 @@ export default function PersonalProjects() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 />
               </div>
+              <CardIcons />
             </motion.div>
           ))}
         </div>

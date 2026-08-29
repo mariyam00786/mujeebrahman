@@ -33,7 +33,6 @@ const diafaImages: ProjectImage[] = [
 
 const ispeakImages: ProjectImage[] = [
   { src: "/images/work/ispeak-branding (1).jpeg" },
-  { src: "/images/work/ispeak-branding (2).jpeg" },
   { src: "/images/work/ispeak-branding (3).jpeg" },
   { src: "/images/work/ispeak-branding (4).jpeg" },
   { src: "/images/work/ispeak-branding (5).jpeg" },
