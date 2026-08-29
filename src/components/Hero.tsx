@@ -4,106 +4,149 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100dvh] flex flex-col justify-center items-center overflow-hidden bg-background">
-      
-      {/* Top Bar Navigation */}
-      <div className="absolute top-0 left-0 right-0 p-6 md:p-8 flex justify-between items-center z-50 text-sm md:text-base font-medium">
-        <motion.div 
-          initial={{ opacity: 0, y: -10 }}
+    <section className="relative min-h-[100dvh] flex flex-col overflow-hidden bg-background text-primary">
+
+      {/* Top Nav */}
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="flex justify-between items-start px-6 md:px-12 pt-8 z-50"
+      >
+        {/* Logo / Name stacked */}
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1">
+            <div className="w-5 h-5 rounded-full bg-primary" />
+            <div className="w-5 h-5 rounded-sm bg-primary opacity-60" />
+            <div className="w-5 h-5 rounded-full bg-accent border border-primary/20" />
+          </div>
+          <div className="leading-none ml-1">
+            <div className="font-display font-black text-base tracking-tight text-primary uppercase">Mujeeb</div>
+            <div className="font-display font-black text-base tracking-tight text-secondary uppercase">Studio</div>
+          </div>
+        </div>
+
+        {/* Top right label */}
+        <div className="text-right">
+          <p className="font-mono text-xs text-secondary uppercase tracking-widest">Portfolio / 2026</p>
+        </div>
+      </motion.div>
+
+      {/* Spacer */}
+      <div className="flex-1" />
+
+      {/* Middle info strip */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.9, delay: 0.4 }}
+        className="flex justify-between items-end px-6 md:px-12 pb-6 z-10"
+      >
+        {/* Left: roles */}
+        <p className="font-sans text-xs md:text-sm text-secondary tracking-wide max-w-xs leading-relaxed">
+          Graphic Designer&nbsp;/&nbsp;Brand Identity&nbsp;/&nbsp;Social Media
+        </p>
+
+        {/* Right: contact info */}
+        <div className="text-right font-mono text-xs text-secondary tracking-wide hidden md:flex gap-4 items-center">
+          <span>mujeebmuji.888@gmail.com</span>
+          <span className="text-primary/30">/</span>
+          <span>+974 30482688</span>
+          <span className="text-primary/30">/</span>
+          <span>Kerala, India</span>
+        </div>
+      </motion.div>
+
+      {/* Massive elegant "Portfolio" with golden wave */}
+      <div className="relative w-full overflow-hidden leading-none">
+
+        {/* The Portfolio text — elegant script */}
+        <motion.h1
+          initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="bg-accent text-primary px-5 py-2 rounded-full font-bold shadow-sm"
+          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+          className="font-script text-primary whitespace-nowrap select-none italic"
+          style={{
+            fontSize: "clamp(5rem, 18vw, 20rem)",
+            lineHeight: 0.95,
+            paddingLeft: "0.05em",
+            fontWeight: 700,
+          }}
         >
-          Hello, Welcome
-        </motion.div>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-primary hidden sm:block font-semibold"
+          Portfolio
+        </motion.h1>
+
+        {/* Golden wavy SVG ribbon — cuts across the text */}
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ duration: 1.4, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute inset-0 pointer-events-none origin-left"
+          style={{ top: "38%", height: "28%" }}
         >
-          Mujeeb Rahman
+          <svg
+            viewBox="0 0 1440 120"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full h-full"
+          >
+            <defs>
+              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#b8860b" stopOpacity="0.6" />
+                <stop offset="20%" stopColor="#ffd700" stopOpacity="0.9" />
+                <stop offset="45%" stopColor="#ffe862" stopOpacity="1" />
+                <stop offset="60%" stopColor="#d4a017" stopOpacity="1" />
+                <stop offset="80%" stopColor="#ffd700" stopOpacity="0.9" />
+                <stop offset="100%" stopColor="#b8860b" stopOpacity="0.5" />
+              </linearGradient>
+            </defs>
+            {/* Main thick wavy ribbon */}
+            <path
+              d="M0,55 C120,20 240,90 360,50 C480,10 600,80 720,45 C840,10 960,75 1080,40 C1200,5 1320,70 1440,35"
+              fill="none"
+              stroke="url(#goldGrad)"
+              strokeWidth="18"
+              strokeLinecap="round"
+            />
+            {/* Shimmer highlight on top */}
+            <path
+              d="M0,50 C120,15 240,85 360,45 C480,5 600,75 720,40 C840,5 960,70 1080,35 C1200,0 1320,65 1440,30"
+              fill="none"
+              stroke="rgba(255,255,255,0.5)"
+              strokeWidth="5"
+              strokeLinecap="round"
+            />
+          </svg>
         </motion.div>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-primary font-semibold"
-        >
-          Graphic Design
-        </motion.div>
+
       </div>
 
-      {/* Center Kinetic Typography */}
-      <div className="relative flex flex-col items-center justify-center w-full z-10 pointer-events-none mt-10 md:mt-0">
-        
-        {/* Top Layer 2 (Hollow Outline) */}
-        <motion.h1 
-          initial={{ y: 0, opacity: 0 }}
-          animate={{ y: "-65%", opacity: 0.3 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute text-[22vw] sm:text-[18vw] md:text-[16vw] font-black tracking-tighter text-transparent lowercase whitespace-nowrap"
-          style={{ WebkitTextStroke: '2px var(--color-accent)' }}
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
+      >
+        <span className="font-mono text-[10px] tracking-widest uppercase text-secondary">Scroll</span>
+        {/* Mouse icon */}
+        <div className="w-6 h-10 rounded-full border-2 border-primary/30 flex justify-center pt-1.5">
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+            className="w-1 h-2 rounded-full bg-accent"
+          />
+        </div>
+        {/* Bouncing chevron */}
+        <motion.svg
+          animate={{ y: [0, 5, 0] }}
+          transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+          width="16" height="10" viewBox="0 0 16 10" fill="none"
+          className="text-primary/30"
         >
-          portfolio
-        </motion.h1>
-
-        {/* Top Layer 1 (Hollow Outline) */}
-        <motion.h1 
-          initial={{ y: 0, opacity: 0 }}
-          animate={{ y: "-35%", opacity: 0.6 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute text-[22vw] sm:text-[18vw] md:text-[16vw] font-black tracking-tighter text-transparent lowercase whitespace-nowrap"
-          style={{ WebkitTextStroke: '2px var(--color-accent)' }}
-        >
-          portfolio
-        </motion.h1>
-
-        {/* Center Solid Layer (Yellow with Dark Brutalist Shadow) */}
-        <motion.h1 
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative text-[22vw] sm:text-[18vw] md:text-[16vw] font-black tracking-tighter text-accent lowercase whitespace-nowrap z-20"
-          style={{ textShadow: '4px 4px 0px var(--color-primary), 8px 8px 0px rgba(28,25,23,0.15)' }}
-        >
-          portfolio
-        </motion.h1>
-
-        {/* Bottom Layer 1 (Hollow Outline) */}
-        <motion.h1 
-          initial={{ y: 0, opacity: 0 }}
-          animate={{ y: "35%", opacity: 0.6 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute text-[22vw] sm:text-[18vw] md:text-[16vw] font-black tracking-tighter text-transparent lowercase whitespace-nowrap"
-          style={{ WebkitTextStroke: '2px var(--color-accent)' }}
-        >
-          portfolio
-        </motion.h1>
-
-        {/* Bottom Layer 2 (Hollow Outline) */}
-        <motion.h1 
-          initial={{ y: 0, opacity: 0 }}
-          animate={{ y: "65%", opacity: 0.3 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute text-[22vw] sm:text-[18vw] md:text-[16vw] font-black tracking-tighter text-transparent lowercase whitespace-nowrap"
-          style={{ WebkitTextStroke: '2px var(--color-accent)' }}
-        >
-          portfolio
-        </motion.h1>
-
-        {/* 2026 Badge */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="absolute top-[75%] md:top-[80%] z-30 text-xl md:text-3xl font-black text-primary/80 bg-background/80 backdrop-blur-sm px-4 rounded-full drop-shadow-md"
-        >
-          2026
-        </motion.div>
-      </div>
+          <path d="M1 1L8 8L15 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </motion.svg>
+      </motion.div>
 
     </section>
   );

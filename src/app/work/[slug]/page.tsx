@@ -11,19 +11,40 @@ const projectDetails: Record<string, any> = {
     period: "2023 — Present",
     description: "Complete digital branding and social media execution. Designed posters, covered live events, and shaped the brand's social presence from the ground up.",
     services: ["Brand Identity", "Social Media", "Video Editing", "Posters & Print"],
-    images: [
-      "/images/work/ispeak-cover.jpg.jpg",
-      "/images/work/ispeak-branding (1).jpeg",
-      "/images/work/ispeak-branding (2).jpeg",
-      "/images/work/ispeak-branding (3).jpeg",
-      "/images/work/ispeak-branding (4).jpeg",
-      "/images/work/ispeak-branding (5).jpeg",
-      "/images/work/ispeak-branding (6).jpeg",
-      "/images/work/ispeak-branding (7).jpeg",
-      "/images/work/ispeak-branding (8).jpeg",
-      "/images/work/ispeak-branding (9).jpeg",
-      "/images/work/ispeak-branding (10).jpeg",
-      "/images/work/ispeak-branding (11).jpeg",
+    sections: [
+      {
+        label: "Branding",
+        images: [
+          "/images/work/ispeak-cover.jpg.jpg",
+          "/images/work/ispeak-branding (1).jpeg",
+          "/images/work/ispeak-branding (2).jpeg",
+          "/images/work/ispeak-branding (3).jpeg",
+          "/images/work/ispeak-branding (4).jpeg",
+          "/images/work/ispeak-branding (5).jpeg",
+          "/images/work/ispeak-branding (6).jpeg",
+          "/images/work/ispeak-branding (7).jpeg",
+          "/images/work/ispeak-branding (8).jpeg",
+          "/images/work/ispeak-branding (9).jpeg",
+          "/images/work/ispeak-branding (10).jpeg",
+          "/images/work/ispeak-branding (11).jpeg",
+        ]
+      },
+      {
+        label: "Posters",
+        images: [
+          "/images/work/ispeak-poster (1).jpeg",
+          "/images/work/ispeak-poster (2).jpeg",
+          "/images/work/ispeak-poster (3).jpeg",
+          "/images/work/ispeak-poster (4).jpeg",
+          "/images/work/ispeak-poster (5).jpeg",
+          "/images/work/ispeak-poster (6).jpeg",
+          "/images/work/ispeak-poster (7).jpeg",
+          "/images/work/ispeak-poster (8).jpeg",
+          "/images/work/ispeak-poster (9).jpeg",
+          "/images/work/ispeak-poster (10).jpeg",
+          "/images/work/ispeak-poster (11).jpeg",
+        ]
+      }
     ]
   },
   "promed": {
@@ -58,6 +79,7 @@ const projectDetails: Record<string, any> = {
       "/images/work/flywing-posters (7).jpeg",
       "/images/work/flywing-posters (8).jpeg",
       "/images/work/flywing-posters (9).jpeg",
+      "/images/work/flywing-posters (10).jpeg",
     ]
   },
   "personal": {
@@ -66,18 +88,58 @@ const projectDetails: Record<string, any> = {
     period: "Ongoing",
     description: "A collection of personal explorations, visual experiments, and passion projects showcasing my creative range outside of client work.",
     services: ["Visual Design", "Experimentation", "Typography"],
-    images: [
-      "/images/work/personal works (1).jpeg",
-      "/images/work/personal works (2).jpeg",
-      "/images/work/personal works (3).jpeg",
-      "/images/work/personal works (4).jpeg",
-      "/images/work/personal works (5).jpeg",
-      "/images/work/personal works (6).jpeg",
-      "/images/work/personal works (7).jpeg",
-      "/images/work/personal works (8).jpeg",
+    sections: [
+      {
+        label: "Creative Works",
+        images: [
+          "/images/work/personal works (1).jpeg",
+          "/images/work/personal works (2).jpeg",
+          "/images/work/personal works (3).jpeg",
+          "/images/work/personal works (4).jpeg",
+          "/images/work/personal works (5).jpeg",
+          "/images/work/personal works (6).jpeg",
+          "/images/work/personal works (7).jpeg",
+          "/images/work/personal works (8).jpeg",
+          "/images/work/personal works (9).jpeg",
+          "/images/work/personal works (10).jpeg",
+          "/images/work/personal works (11).jpeg",
+          "/images/work/personal works (99) - Copy.jpeg",
+        ]
+      },
+      {
+        label: "Logo Design",
+        images: [
+          "/images/work/personal-logo.jpeg",
+          "/images/work/personal-logo (1).jpeg",
+          "/images/work/personal-logo (2).jpeg",
+          "/images/work/personal-logo (3).jpeg",
+          "/images/work/personal-logo (4).jpeg",
+        ]
+      }
     ]
   }
 };
+
+// Reusable masonry grid
+function MasonryGrid({ images, projectName }: { images: string[]; projectName: string }) {
+  return (
+    <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+      {images.map((img: string, idx: number) => (
+        <div
+          key={idx}
+          className="relative overflow-hidden bg-primary/5 group rounded-2xl md:rounded-3xl break-inside-avoid shadow-sm hover:shadow-xl transition-shadow duration-500"
+        >
+          <img
+            src={img}
+            alt={`${projectName} image ${idx + 1}`}
+            className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -130,25 +192,32 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
 
-        {/* Project Gallery (Masonry style layout) */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-          {project.images.map((img: string, idx: number) => (
-            <div 
-              key={idx} 
-              className="relative overflow-hidden bg-primary/5 group rounded-2xl md:rounded-3xl break-inside-avoid shadow-sm hover:shadow-xl transition-shadow duration-500"
-            >
-              {/* Using standard img for natural aspect ratio instead of absolute fill */}
-              <img 
-                src={img} 
-                alt={`${project.name} image ${idx + 1}`} 
-                className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
+        {/* Sectioned gallery (e.g. Branding + Posters) */}
+        {project.sections ? (
+          <div className="flex flex-col gap-20">
+            {project.sections.map((section: { label: string; images: string[] }) => (
+              <div key={section.label}>
+                {/* Section heading */}
+                <div className="flex items-center gap-6 mb-10">
+                  <h2 className="font-display font-black text-3xl md:text-4xl uppercase tracking-tight text-primary whitespace-nowrap">
+                    {section.label}
+                  </h2>
+                  <div className="flex-1 h-px bg-primary/15" />
+                  <span className="font-mono text-sm text-primary/40 uppercase tracking-widest">
+                    {section.images.length} images
+                  </span>
+                </div>
+                <MasonryGrid images={section.images} projectName={project.name} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          /* Flat gallery for other projects */
+          <MasonryGrid images={project.images} projectName={project.name} />
+        )}
 
       </div>
     </main>
   );
 }
+

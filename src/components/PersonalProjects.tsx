@@ -17,106 +17,124 @@ const images = [
   "/images/work/personal works (6).jpeg",
   "/images/work/personal works (7).jpeg",
   "/images/work/personal works (8).jpeg",
+  "/images/work/personal works (9).jpeg",
+  "/images/work/personal works (10).jpeg",
+  "/images/work/personal works (11).jpeg",
 ];
 
+function CardIcons() {
+  return (
+    <div className="flex items-center justify-between mt-3 px-1">
+      <div className="flex items-center gap-3 text-primary/40">
+        {/* Send */}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
+        </svg>
+        {/* Heart */}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+        {/* Comment */}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        </svg>
+      </div>
+      {/* Bookmark */}
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary/40">
+        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+      </svg>
+    </div>
+  );
+}
+
 export default function PersonalProjects() {
+  const allItems = [...images];
+
   return (
     <section className="py-24 md:py-32 bg-background border-t border-primary/10" id="personal-projects">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        
+
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 md:mb-24">
           <div>
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.6 }}
               className="flex items-center gap-4 mb-6"
             >
-              <span className="text-primary text-sm font-mono tracking-widest uppercase font-semibold">SELECTED WORKS — 04</span>
-              <div className="h-[1px] w-12 bg-primary"></div>
+              <span className="text-primary text-sm font-mono tracking-widest uppercase font-semibold">SELECTED WORKS - 04</span>
+              <div className="h-[1px] w-12 bg-primary" />
             </motion.div>
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-6xl font-display font-bold tracking-tighter uppercase text-primary"
             >
               Personal Projects
             </motion.h2>
           </div>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}
             className="text-primary/70 max-w-sm text-lg font-medium"
           >
             A collection of visual experiments, passion projects, and creative explorations outside of client work.
           </motion.p>
         </div>
 
-        {/* Videos Grid (3 Columns) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          {videos.map((src, idx) => (
+        {/* Square card grid - 3 columns */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16">
+          {allItems.map((img, idx) => (
             <motion.div
-              key={src}
-              initial={{ opacity: 0, y: 30 }}
+              key={idx}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="relative overflow-hidden bg-primary/5 rounded-2xl group shadow-sm hover:shadow-xl transition-all duration-500 aspect-[9/16] md:aspect-auto md:h-[600px]"
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: (idx % 3) * 0.07 }}
             >
-              <video 
-                src={src} 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
-              />
+              {/* Poster image card */}
+              <div className="relative overflow-hidden rounded-2xl group aspect-[3/4] bg-primary/5 shadow-sm hover:shadow-lg transition-shadow duration-500">
+                <img
+                  src={img}
+                  alt={`Personal Work ${idx + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  loading="lazy"
+                />
+              </div>
+              <CardIcons />
             </motion.div>
           ))}
         </div>
 
-        {/* Masonry Images Grid */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-          {images.map((img, idx) => (
-            <motion.div 
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
+        {/* Motion Work label */}
+        <div className="flex items-center gap-4 mb-8">
+          <span className="text-primary/50 text-xs font-mono tracking-widest uppercase">Motion Work</span>
+          <div className="h-[1px] flex-1 bg-primary/10" />
+          <span className="text-primary/30 text-xs font-mono">{videos.length} videos</span>
+        </div>
+
+        {/* Videos - reel portrait (9:16) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {videos.map((src, idx) => (
+            <motion.div
+              key={src}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: (idx % 3) * 0.1 }}
-              className="relative overflow-hidden bg-primary/5 rounded-2xl group break-inside-avoid shadow-sm hover:shadow-xl transition-all duration-500"
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: idx * 0.08 }}
             >
-              <img 
-                src={img} 
-                alt={`Personal Work ${idx + 1}`} 
-                className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
-                loading="lazy"
-              />
+              <div className="relative overflow-hidden rounded-2xl group aspect-[9/16] bg-primary/5 shadow-sm hover:shadow-lg transition-shadow duration-500">
+                <video
+                  src={src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+              </div>
             </motion.div>
           ))}
-
-          {/* Minimal Filler Block to balance the 3-column grid (8 images + 1 block = 9 items) */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="relative bg-transparent border border-primary/10 rounded-2xl break-inside-avoid flex flex-col items-center justify-center p-12 text-center h-[400px] shadow-sm hover:border-primary/30 transition-colors duration-500"
-          >
-            <div className="w-12 h-[2px] bg-primary/20 mb-8"></div>
-            <h3 className="text-3xl font-display font-bold text-primary tracking-tighter uppercase mb-4 leading-none">
-              Constant<br />Exploration
-            </h3>
-            <p className="text-primary/50 font-mono text-xs uppercase tracking-widest">
-              More updates soon
-            </p>
-          </motion.div>
         </div>
 
       </div>
