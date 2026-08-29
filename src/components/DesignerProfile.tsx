@@ -8,7 +8,7 @@ export default function DesignerProfile() {
   const { mainText, paragraphLeft, paragraphRight, image } = content.hero;
 
   return (
-    <section className="relative flex flex-col justify-center overflow-hidden bg-background pt-20 md:pt-28 pb-12 md:pb-16 border-t border-primary/10">
+    <section className="relative flex flex-col justify-center overflow-hidden bg-background pt-14 md:pt-28 pb-10 md:pb-16 border-t border-primary/10">
       
       {/* Unique Background Grid Pattern */}
       <div 
@@ -50,7 +50,7 @@ export default function DesignerProfile() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 w-full max-w-[450px] md:max-w-[600px] lg:max-w-[700px] h-[40vh] md:h-[60vh] pointer-events-auto"
+          className="relative z-10 w-full max-w-[300px] md:max-w-[600px] lg:max-w-[700px] h-[35vh] md:h-[60vh] pointer-events-auto"
           style={{ 
             WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
             maskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)'
@@ -79,7 +79,7 @@ export default function DesignerProfile() {
 
       {/* Bottom Paragraphs */}
       <div className="relative px-6 md:px-12 z-30 pointer-events-none">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full max-w-7xl mx-auto gap-8 md:gap-0 pointer-events-auto">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full max-w-7xl mx-auto gap-5 md:gap-0 pointer-events-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

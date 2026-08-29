@@ -7,7 +7,7 @@ export default function ContactFooter() {
   const { headline, email, phoneQatar, phoneIndia, socials } = content.contact;
 
   return (
-    <footer className="bg-background text-primary pt-32 pb-8 px-6 md:px-12 relative overflow-hidden border-t border-primary/10" id="contact">
+    <footer className="bg-background text-primary pt-16 md:pt-32 pb-8 px-5 md:px-12 relative overflow-hidden border-t border-primary/10" id="contact">
       {/* Background Marquee of Name */}
       <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 opacity-[0.03] pointer-events-none overflow-hidden select-none">
         <h2 className="text-[20vw] font-display font-bold uppercase whitespace-nowrap leading-none tracking-tighter">
@@ -25,7 +25,7 @@ export default function ContactFooter() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-7xl lg:text-[7rem] font-display font-bold tracking-tighter leading-[0.9] mb-8">
+            <h2 className="text-4xl md:text-7xl lg:text-[7rem] font-display font-bold tracking-tighter leading-[0.9] mb-6 md:mb-8">
               <span className="block">{headline.split(' ').slice(0, Math.ceil(headline.split(' ').length / 2)).join(' ')}</span>
               <span className="block">{headline.split(' ').slice(Math.ceil(headline.split(' ').length / 2)).join(' ')}</span>
             </h2>
@@ -67,7 +67,7 @@ export default function ContactFooter() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-32 pt-8 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary/50 font-mono">
+        <div className="mt-16 md:mt-32 pt-8 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary/50 font-mono text-center">
           <p>© {new Date().getFullYear()} Mujeeb Rahman. All rights reserved.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-primary transition-colors">Home</a>

@@ -150,7 +150,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   }
 
   return (
-    <main className="bg-background min-h-screen text-primary selection:bg-accent selection:text-white pt-32 pb-24">
+    <main className="bg-background min-h-screen text-primary selection:bg-accent selection:text-white pt-20 md:pt-32 pb-16 md:pb-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Back Button */}
@@ -162,9 +162,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </Link>
 
         {/* Project Header */}
-        <div className="flex flex-col md:flex-row gap-12 justify-between items-start mb-24 border-b border-primary/10 pb-16">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 justify-between items-start mb-16 md:mb-24 border-b border-primary/10 pb-10 md:pb-16">
           <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-display font-black tracking-tighter leading-[0.9] uppercase mb-8 text-primary">
+            <h1 className="text-4xl md:text-7xl lg:text-[7rem] font-display font-black tracking-tighter leading-[0.9] uppercase mb-5 md:mb-8 text-primary">
               {project.name}
             </h1>
             <p className="text-xl md:text-2xl text-primary/80 font-medium leading-relaxed">

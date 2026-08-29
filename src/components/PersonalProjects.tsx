@@ -83,7 +83,7 @@ export default function PersonalProjects() {
         </div>
 
         {/* Square card grid - 3 columns */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 mb-12 md:mb-16">
           {allItems.map((img, idx) => (
             <motion.div
               key={idx}
@@ -114,7 +114,7 @@ export default function PersonalProjects() {
         </div>
 
         {/* Videos - reel portrait (9:16) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {videos.map((src, idx) => (
             <motion.div
               key={src}

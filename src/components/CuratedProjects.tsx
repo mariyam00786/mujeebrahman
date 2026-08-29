@@ -51,8 +51,8 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: index * 0.07 }}
       ref={cardRef}
-      className="relative overflow-hidden border-r border-b border-primary/10 last:border-r-0 cursor-none"
-      style={{ minHeight: "400px" }}
+      className="relative overflow-hidden border-b border-primary/10 md:border-r md:last:border-r-0 cursor-none"
+      style={{ minHeight: "280px" }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onMouseMove={handleMouseMove}
@@ -76,7 +76,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
         />
 
         {/* Card content */}
-        <div className="relative z-10 flex flex-col items-center justify-between h-full p-8 md:p-12" style={{ minHeight: "400px" }}>
+        <div className="relative z-10 flex flex-col items-center justify-between h-full p-6 md:p-12" style={{ minHeight: "280px" }}>
           {/* Year — top center */}
           <span className="font-mono text-xs text-secondary uppercase tracking-widest">
             {project.year}
@@ -84,7 +84,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
 
           {/* Project name — center */}
           <h3
-            className="font-display font-black text-3xl md:text-4xl lg:text-5xl text-primary uppercase tracking-tight leading-tight text-center transition-colors duration-300"
+            className="font-display font-black text-2xl md:text-4xl lg:text-5xl text-primary uppercase tracking-tight leading-tight text-center transition-colors duration-300"
             style={{ color: hovered ? "var(--color-primary)" : undefined }}
           >
             {project.name}
@@ -130,7 +130,7 @@ export default function CuratedProjects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-primary text-5xl md:text-7xl lg:text-8xl leading-none uppercase font-display font-bold tracking-tighter mb-5"
+          className="text-primary text-4xl md:text-7xl lg:text-8xl leading-none uppercase font-display font-bold tracking-tighter mb-4 md:mb-5"
         >
           Curated Projects
         </motion.h2>
@@ -147,7 +147,7 @@ export default function CuratedProjects() {
       </div>
 
       {/* Grid */}
-      <div className="border-t border-l border-primary/10 grid grid-cols-1 md:grid-cols-2">
+      <div className="border-t border-primary/10 grid grid-cols-1 md:grid-cols-2">
         {curatedProjects.map((project, idx) => (
           <ProjectCard key={project.slug} project={project} index={idx} />
         ))}
