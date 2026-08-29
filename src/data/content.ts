@@ -9,10 +9,12 @@ export const content = {
   },
   marquee: {
     items: [
-      "Brand Identity",
-      "Posters & Print",
-      "Social Media",
-      "Video"
+      "BRANDING",
+      "GRAPHIC DESIGN",
+      "SOCIAL MEDIA",
+      "VIDEO",
+      "CONTENT",
+      "DIGITAL MARKETING"
     ]
   },
   capabilities: [
