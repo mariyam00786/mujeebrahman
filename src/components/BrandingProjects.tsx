@@ -116,10 +116,10 @@ export default function BrandingProjects() {
               {/* Right Side: Masonry Gallery - Perfect Masonry via Flex Columns */}
               <div className="lg:w-2/3">
                 
-                {/* Desktop/Tablet: 2 Columns */}
-                <div className="hidden md:grid grid-cols-2 gap-6 mb-12">
+                {/* All Screens: 2 Columns */}
+                <div className="grid grid-cols-2 gap-3 md:gap-6 mb-12">
                   {[0, 1].map((colIndex) => (
-                    <div key={colIndex} className="flex flex-col gap-6">
+                    <div key={colIndex} className="flex flex-col gap-3 md:gap-6">
                       {project.images.filter((_, i) => i % 2 === colIndex).map((img, idx) => (
                         <motion.div
                           key={idx}
@@ -128,7 +128,7 @@ export default function BrandingProjects() {
                           viewport={{ once: true, margin: "-40px" }}
                           transition={{ duration: 0.6 }}
                         >
-                          <div className="relative overflow-hidden rounded-2xl group bg-primary/5 shadow-sm hover:shadow-md transition-all duration-500">
+                          <div className="relative overflow-hidden rounded-xl group bg-primary/5 shadow-sm hover:shadow-md transition-all duration-500">
                             {img.src.endsWith(".mp4") ? (
                               <video src={encodeURI(img.src)} autoPlay loop muted playsInline className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                             ) : (
@@ -138,27 +138,6 @@ export default function BrandingProjects() {
                         </motion.div>
                       ))}
                     </div>
-                  ))}
-                </div>
-
-                {/* Mobile: 1 Column */}
-                <div className="grid md:hidden grid-cols-1 gap-6 mb-12">
-                  {project.images.map((img, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, y: 24 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-40px" }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <div className="relative overflow-hidden rounded-2xl group bg-primary/5 shadow-sm hover:shadow-md transition-all duration-500">
-                        {img.src.endsWith(".mp4") ? (
-                          <video src={encodeURI(img.src)} autoPlay loop muted playsInline className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                        ) : (
-                          <img src={encodeURI(img.src)} alt={`${project.clientName} Work`} className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" />
-                        )}
-                      </div>
-                    </motion.div>
                   ))}
                 </div>
 

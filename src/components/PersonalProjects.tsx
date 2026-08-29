@@ -110,10 +110,10 @@ export default function PersonalProjects() {
           ))}
         </div>
 
-        {/* Tablet: 2 Columns */}
-        <div className="hidden md:grid lg:hidden grid-cols-2 gap-4 mb-12">
+        {/* Mobile & Tablet: 2 Columns */}
+        <div className="grid lg:hidden grid-cols-2 gap-3 md:gap-4 mb-12">
           {[0, 1].map((colIndex) => (
-            <div key={colIndex} className="flex flex-col gap-4">
+            <div key={colIndex} className="flex flex-col gap-3 md:gap-4">
               {allItems.filter((_, i) => i % 2 === colIndex).map((file, idx) => (
                 <motion.div
                   key={idx}
@@ -122,7 +122,7 @@ export default function PersonalProjects() {
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.6 }}
                 >
-                  <div className="relative overflow-hidden rounded-2xl group bg-primary/5 shadow-sm hover:shadow-md transition-all duration-500">
+                  <div className="relative overflow-hidden rounded-xl group bg-primary/5 shadow-sm hover:shadow-md transition-all duration-500">
                     {file.endsWith(".mp4") ? (
                       <video src={encodeURI(file)} autoPlay loop muted playsInline className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                     ) : (
@@ -133,28 +133,6 @@ export default function PersonalProjects() {
                 </motion.div>
               ))}
             </div>
-          ))}
-        </div>
-
-        {/* Mobile: 1 Column */}
-        <div className="grid md:hidden grid-cols-1 gap-4 mb-12">
-          {allItems.map((file, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="relative overflow-hidden rounded-2xl group bg-primary/5 shadow-sm hover:shadow-md transition-all duration-500">
-                {file.endsWith(".mp4") ? (
-                  <video src={encodeURI(file)} autoPlay loop muted playsInline className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                ) : (
-                  <img src={encodeURI(file)} alt={`Personal Work`} className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" />
-                )}
-              </div>
-              <CardIcons />
-            </motion.div>
           ))}
         </div>
 
