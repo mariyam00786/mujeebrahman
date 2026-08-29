@@ -11,6 +11,7 @@ const projectDetails: Record<string, any> = {
     period: "2023 — Present",
     description: "Complete digital branding and social media execution. Designed posters, covered live events, and shaped the brand's social presence from the ground up.",
     services: ["Brand Identity", "Social Media", "Video Editing", "Posters & Print"],
+    highlightImage: "/images/work/ispeak-highlight.jpg",
     sections: [
       {
         label: "Branding",
@@ -191,6 +192,21 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </div>
           </div>
         </div>
+
+        {/* Highlight Image (if any) */}
+        {project.highlightImage && (
+          <div className="mb-16 md:mb-24 w-full">
+            <div className="relative w-full aspect-video md:aspect-[2/1] rounded-2xl md:rounded-3xl overflow-hidden bg-primary/5 shadow-xl">
+              <Image 
+                src={project.highlightImage} 
+                alt={`${project.name} Highlight`}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        )}
 
         {/* Sectioned gallery (e.g. Branding + Posters) */}
         {project.sections ? (
