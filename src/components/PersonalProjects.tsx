@@ -9,9 +9,6 @@ const videos = [
 ];
 
 const images = [
-  "/images/work/personal works (9).jpeg",
-  "/images/work/personal works (10).jpeg",
-  "/images/work/personal works (11).jpeg",
   "/images/work/personal works (1).jpeg",
   "/images/work/personal works (2).jpeg",
   "/images/work/personal works (3).jpeg",
@@ -20,6 +17,9 @@ const images = [
   "/images/work/personal works (6).jpeg",
   "/images/work/personal works (7).jpeg",
   "/images/work/personal works (8).jpeg",
+  "/images/work/personal works (9).jpeg",
+  "/images/work/personal works (10).jpeg",
+  "/images/work/personal works (11).jpeg",
 ];
 
 function CardIcons() {
